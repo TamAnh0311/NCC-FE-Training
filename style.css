@@ -14,8 +14,7 @@
 .container {
     display: flex;
     justify-content: space-around;
-    
-}
+}   
 
 .container:after {
     content: "";
@@ -73,21 +72,30 @@
 
 .flex-container  div  {
     margin: 10px 0px;
-    height: 150px;
+    height: 250px;
     width: 250px;
     box-sizing: content-box;
+    text-align: center;
+    line-height: 0.1;
 }
 
 iframe {
     width: 250px;
+    height: 150px;
 }
 
 
-@media screen and (max-width: 600px) {
-    nav {
+@media  (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+    .nav-link {
         width: 100%;
     }
-    aside {
+    .flex-container {
+        width: 100%;
+    }
+    .about-banner {
         width: 100%;
     }
 }
