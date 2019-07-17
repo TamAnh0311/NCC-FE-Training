@@ -1,0 +1,25 @@
+.item {
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2;
+    background-color: lightgray;
+    width: 100%;
+    border: 2px solid white;
+    margin: 0;
+}
+
+iframe {
+    width: 250px;
+    height: 150px;
+}
+
+.header-banner {
+    height: 7rem; 
+    text-align: center; 
+    background-color: lightgray; 
+    width: 100%;
+    h1 {
+        line-height: 2.5;
+    }
+}
+
