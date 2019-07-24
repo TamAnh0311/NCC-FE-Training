@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vutamanh Baitap js</title>
+</head>
+<style>
+    .select-box {
+        height: 2rem;
+        width: 10rem;
+    }
+</style>
+
+<body>
+    <select class="select-box" id="class-name">
+        <option value="" disabled selected>Select class</option>
+    </select>
+    <select class="select-box" id="student-name">
+        <option value="" disabled selected>Select student</option>
+    </select>
+
+    <script>
+        var students = [
+            { id: 1, name: 'tran van a', className: '.net' },
+            { id: 2, name: 'tran van b', className: '.net' },
+            { id: 3, name: 'tran van c', className: 'angular' },
+            { id: 4, name: 'tran van d', className: 'angular' },
+            { id: 5, name: 'tran van e', className: 'java' },
+            { id: 6, name: 'tran van f', className: 'java' },
+            { id: 7, name: 'tran van g', className: 'java' },
+            { id: 8, name: 'tran van h', className: 'test' },
+            { id: 9, name: 'tran van i', className: 'test' },
+            { id: 10, name: 'tran van j', className: 'test' }
+        ]
+        var selectClass = document.getElementById("class-name");
+        var classStudent = document.getElementById("student-name");
+
+        var mapClass = [];
+
+        for (index in students) {
+            mapClass.push(students[index].className);
+        }
+
+        var allClass = [...new Set(mapClass)];
+
+        for (index in allClass) {
+            selectClass.options[selectClass.options.length] = new Option(allClass[index]);
+        }
+
+        selectClass.onchange = function () {
+            classStudent.innerHTML = null;
+            var studentByClass = []
+            studentByClass = students.filter(x =>
+                x.className === selectClass.value,
+            )
+            for (index in studentByClass) {
+                classStudent.options[classStudent.options.length] = new Option(studentByClass[index].name)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
